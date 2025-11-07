@@ -47,7 +47,9 @@
 #1.遍历输入token的ID列表
 #2.在vocab字典中查找每个ID的bytes
 #3.将所有bytes拼接在一起
-#4.使用.decode
+#4.使用.decode（“utf-8",errors='replace')最终将字节序列转化为字符串
+#必须使用errors='replace',这会自动将任何无效的字节序列替换为Unicode替换
+字符（U+FFFD)
 
 
 
