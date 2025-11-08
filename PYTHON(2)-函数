@@ -41,3 +41,15 @@ pe.introduce()
 pe2=Person("hh",19)
 pe2.display()
 pe2.introduce()
+#4.析构函数__del__（）
+#析构函数__del__是对象在垃圾回收时起着作用的方法，他的执行意味着对象不能继续使用，回收内存
+#删除时，解释器会默认调用
+class Person:
+    def __init__(self):
+        print("woshi1")
+    def __del__(self):
+        print("被销毁了")
+p=Person()
+del p   #删除p这个对象，语句执行后，内存会立即被回收，会调用对象本身的__del__()方法
+print("这是最后一行代码")
+#__del__()主要表示该程序块或者函数已经全部执行结束
