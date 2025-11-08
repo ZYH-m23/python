@@ -1,3 +1,78 @@
 #面向对象的三大特性:封装，继承，多态
 #1.封装：指隐藏对象中一些不希望被外部所访问的属性或方法
-#
+class Person:
+    name ="bingbing"
+pe =Person()   #在实例化对象中
+print(pe.name)
+Person.name = "hh"  #在类中
+print(Person.name
+#1.1.隐藏属性（私有权限），只允许在类的内部使用，无法通过对象访问
+#1.1.1形式：在属性名或者方法名前面加上两个下划线__
+class Person:
+    name="james"  #类属性
+    __age=18   #隐藏属性
+pe=Person()
+print(pe.name)
+print(pe.__age)  #会报错，属性被隐藏了
+#1.1.2如果隐藏属性已经定义好了，而且也需要在外部访问值，方法：
+#1.1.2.1（了解）
+隐藏属性实际上是将名字修改为_类名__属性名  _Person__age
+class Person:
+    __age=18
+pe=Person()
+pe._Person__age=18
+print(pe._Person__age)  #也能够成功运行
+#1.1.2.2（掌握）
+#在类里面重新定义一个方法
+class Person:
+    name="bingbing"
+    __age=18
+    def introduce(self):
+        print(f"{Person.name} 的年龄是{Person.__age}")
+pe=Person()
+pe.introduce()
+#1.2私有属性
+#1.2.1xxx:普通变量/方法，如果是类中定义的，则类可以在任何地方使用
+#1.2.2_xxx:声明私有属性/方法，如果定义在类中，外部可以使用，子类也可以继承，但在另一个py.文件中通过
+#           from xxx import*导入的时候，无法导入，一般是为了避免与python关键字冲突而采用的命名方法
+#1.2.3__xxx:隐藏属性，一般是python中的魔法属性/方法，自己不轻易定义如果定义在类里，无法在外部直接访问，子类不会继承
+#           要访问也只能间接访问，另一个py.文件中通过from xxx import*导入的时候，也无法导入
+#问题：什么是魔法方法？            
+#解答：是一类以__(双下划线)开头结尾的方法，入__int__,__str__；他们是不需要调用，在特定场景下自动触发的函数
+class Person:
+    name="hh"
+    __age=18  #隐藏属性
+    _sex="女" #私有属性
+pe=Person()
+#print(pe.sex)  报错
+#使用对象名._属性名调用
+print(pe._Person__age)
+#1.3隐藏方法
+class Man():
+
+    def __play(self):
+        print("玩手机")
+    def funa(self):
+        self.__play()     #在实例方法中调用私有方法
+ma=Man()
+ma._Man__play()
+1.4 私有方法
+class Girl:
+def __introduce(self):
+print("独立")
+girl=Girl()
+girl.introduce()
+#2.继承
+#是让类与类之间转变成父子关系，子类默认成继承父类的属性与方法
+#2.1语法：
+#class 类名（父类名）:
+#    代码块
+#2.2单继承
+
+
+
+
+
+
+
+
