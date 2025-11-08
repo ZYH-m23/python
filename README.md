@@ -29,7 +29,11 @@ print(wa)  #默认显示的是对象的地址
 #由对象调用，至少有一个self参数，执行实例方法时，自动将调用该方法的对象赋值给self
 class Washer:
   height=800  #类属性
-  def wash():
+  def wash(self):    #实例方法：其中self是必须具备的,self表示当前调用方法的对象
   print("我会洗衣服")
-  #实例化对象
-  wa =Washer()
+wa =Washer()    #实例化对象
+wa.wash()  
+wa2=Washer()
+print("wa2:",wa2)
+wa2.wash()
+#self代表对象本身，当对象调用实例方法时，python会自动将对象本身引用作为参数，传递到实例方法的第一个参数self中
