@@ -1,0 +1,43 @@
+#1.实例属性
+#格式：self.属性名
+class Person:
+    name="bingbign"
+    def introduce(self):
+        print("我是实例方法")
+        print(f"{Person.name}的年龄:{self.age}")
+pe=Person()
+pe.age=18
+pe2=Person()
+pe2.age=19
+pe.introduce()   #作用：调用方法的指令，没有的话代码不运行
+print(pe2.age)
+#问题：为什么print在上面，但age定义在下面，代码也可以运行？
+#解答：因为python代码时从上往下执行，但方法中的代码是调用时才执行，延迟执行
+#补充了解：方法代码中定义的，在下面实例中即使更换，也不变。
+#         上面是方法，下面一定要有实例化对象，要不然输出为0
+#2.实例属性与类属性的区别
+#类属性公有，实例属性是私有的，实例属性只能有对象名访问，不能由类名访问，访问类属性，类可以访问到，实例对象也可访问到
+#每实例化一次就需要添加一次，效率不高
+#3.构造函数
+#作用：通常用来作属性初始化或者赋值操作
+#注意：在实例化对象时，会被自动调用
+class Test:
+    def __init__(self):
+        print("这是__int__()的函数")
+te =Test()
+#区分类属性与实例属性：
+#有self.或者是对象名.是实例化属性，如果是直接类名.，是类属性  
+class Person:
+    def __init__(self,name,age): 
+        self.name = name
+        self.age = age    #为了区分不同的实例化对象，只是设置形参
+    def display(self):
+        print(f"{self.name} 在打游戏")
+    def introduce(self):
+        print(f"{self.name}的年龄是{self.age}")
+pe=Person("bingibign",18)    #填充实参，有效区分
+pe.display()
+pe.introduce()
+pe2=Person("hh",19)
+pe2.display()
+pe2.introduce()
