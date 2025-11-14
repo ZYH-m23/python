@@ -1,0 +1,51 @@
+#多继承得到弊端：易引发冲突
+#多态
+#1.同一种行为具有不同的表现形式
+#2. 特点：
+#2.1不关注对象的类型，关注对象的行为，就是对象的实例方法是否重名
+#2.2可以增加代码的外部调用灵活度，让代码更加通用，兼容性比较强
+#2.3不同的子类对象，调用相同的父类方法，会产生不同的执行结果
+class Animal:
+    """父类:动物类"""
+    def shout(self):
+        print("动物会叫")
+class Cat(Animal):
+    """子类一:猫类"""
+    def shout(self):
+      print("小猫喵喵喵")
+class Dog(Animal):
+    """子类二:狗类"""
+    def shout(self):
+        print("小狗汪汪汪")
+cat = Cat()
+cat.shout()
+dog = Dog()
+dog.shout()
+#多态性：一种调用方法，不同的结果，定义一个接口，多种实现
+ class Animal:
+     def eat(self):
+         print("我会干饭")
+ class Pig(Animal):
+     def eat(self):
+         print("猪吃猪饲料")
+ class Dog(Animal):
+     def eat(self):
+         print("狗吃狗粮")
+ def test(obj):
+     obj.eat()
+   animal = Animal()
+    pig = Pig()
+    dog = Dog()
+    test(animal) 
+    test(pig)    
+     test(dog)     
+#静态方法
+#使用@staticmethod进行修饰，静态方法没有self,cls参数的限制
+#与类无关，可以被转化成函数使用
+class Person():
+    @staticmethod
+    def study():
+        print("人类辉学习")
+Person.study()
+#可以用函数访问，也可以用类访问
+#
