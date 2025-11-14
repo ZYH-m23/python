@@ -1,0 +1,131 @@
+#1.继承
+#1.1解释：子类默认成继承父类的属性与方法
+#   语法：
+#class 类名（父类名）:
+#    代码块
+#分类：单继承，多继承
+#1.2 单继承
+#1.2.1单个传递
+#1.2.2多个传递
+#可以有多个子类
+class Person:    #Person是父类
+    def eat(self):
+        print("eat")
+    def sleep(self):
+        print("sleep")
+class Girl(Person):   #Girl是Person的子类
+    pass #占位符，代码里面类下面不写任何东西，会自动跳过，不会报错，也可以用None
+girl = Girl()    #其中Girl是类名，girl是实例名
+girl.eat() 
+class Boy(Person):class Boy(Person):
+    pass
+boy = Boy()
+boy.eat()
+#1.3多重传递
+#A/B/C C继承于B，B继承A，C具有A/B的属性与方法
+#子类拥有父类的属性与方法
+class Father:    
+    def eat(self):
+        print("eat")
+    def sleep(self):
+        print("sleep")
+class Son(Father):
+    pass
+son = Son()
+son.eat()
+class Grandson(Son):  #切记：括号里的只能是类名，因此要大写
+    pass
+grandson = Grandson()
+grandson.sleep()
+
+#问题：为什么在son中没有sleep但在grandson中可以运行？
+#解答：因为其实son中有的，但只是没有将其表现出来
+
+#1.4重写
+#指在子类中定义与父类相同名称的方法
+#1.4.1方法的重写
+#含义：如果从父类继承的方法不能满足子类的需求，可以在子类中重写父类的方法，为方法重写
+#实现的三种方法：
+#1.父类名.方法名（self）
+#2.super().方法名()---推荐使用
+#3.super(子类名,self).方法名
+#在子类中定义与父类相同的方法
+class Person:   
+    def money(self):
+        print("有钱")
+class Man(Person):
+    def money(self):  #子类自己进行定义了
+        print("挣钱")
+man = Man()
+man.money()    #若子类有，以子类的为主
+#1.4.2对子类方法进行扩展，有父的，也有自身的，用super（）.方法名()
+#类加小括号是在创建实例化对象
+class Person:   
+    def money(self):
+        print("有钱")
+class Man(Person):
+    def money(self): 
+    super().money()
+        print("挣钱")
+man = Man()
+man.money()  
+#2.新式类写法
+#class A:#经典类：不由任何内置类型生出的类
+#class Animal:
+    pass
+class Dog(Animal):
+     pass      #不是派生类（有不同于父类的东西）
+ # 例子
+class Animal:
+    def walk(self):
+        print("Animal is walking")
+class Dog(Animal):
+    def bark(self):
+        print("Dog is barking")
+Dog().walk()   #一定要注意缩进
+Dog().bark()
+#2.2 class A（）
+#2.3 class A(object) ---推荐
+#object ---对象，python为所有对象提供基类（顶级父类），提供了一些内置的方法属性，可利用dir()查看
+#                                                                      print(dir(object))
+#如果python3没有一个类继承任何类，则默认继承object类，因此python3都是新式类
+#3.多继承
+#3.1子类有多个父类，并且具有所有父类的属性与方法
+class Father(object):
+    def money(self):
+     print('拥有钱')
+class Mother(object):
+    def apperance(self):
+     print('高颜值')
+class Son(Father,Mother):
+    pass
+son = Son()
+son.money()
+son.apperance()
+#不同的父类有同样的方法时，调用就近原则，括号内哪一个离得最近，优先调用哪一个类的方法
+#3.3方法的搜索顺序
+#python中的内置属性__mro__可以查看方法搜索顺序
+class Father(object):
+    def money(self):
+     print('拥有钱')
+class Mother(object):
+    def apperance(self):
+     print('高颜值')
+class Son(Father,Mother):
+    pass
+son = Son()
+son.money()
+son.apperance()
+print(Son.__mro__)  #注意是两个"_"
+#搜索方法时，会按照__mro__的是输出结果，从左往右的顺序查找
+#如果当前类找到了方法，就直接不再搜索，若没有找到方法，程序会报错。
+
+
+
+
+     
+
+
+
+
+   
