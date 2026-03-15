@@ -27,6 +27,46 @@ remove()    移除值
 pop()        删除指定索引的元素（默认的是最后一个）
 sort()        对列表进行排序（要求：类型一样）
 reverse()        反转列表元素
+分析：
+题目一
+s=[]   //空列表
+for i in range(10):     // 遍历函数
+    num = int(input("请输入一个有效的数据："))   //直接把输入的值变成整数
+    s.append(num)      //一个一个添在空列表里面
+s.sort()    //排一下序
+print("数据列表",s)  //这个在排序后才打印
+print("数据列表最小值",s[0])
+print("数据列表最大值",s[-1])
+print("数据列表平均值",sum(s)/10)  直接就求平均值了
+题目二
+s1=[19,23,54,64,875,20,109,232,123,54]
+s2=[55,80,72,35,60,123,54,29,91]
+for num in s2:
+    s1.append(num)
+print(s1)
+s=[]
+for num in s1:
+    if num not in s:
+        s.append(num)
+print(s)
 
+解包操作与组包(快速合并列表）
+把整体的东西解成一个一个的元素，再放包里处理
+s=[*s1,*s2]    //s1,s2中的东西解包后合并
 
+列表推导式
+通俗解法：
+s=[]
+for num in range(1,21):
+    s.append(num*num)
+print(s)
+列表推导式
+不带条件的：
+s2=[i**2 for i in range(1,21)]
+print(s2)
+带条件的：
+升级版（需要遍历的）
+s=[34,2,527,36,58]
+s1=[i**2 for i in s if i%2==0]
+print(s1)
 
