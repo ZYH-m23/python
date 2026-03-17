@@ -2,4 +2,13 @@ json格式
 类似于python中的字典，都是key:value形式，不过所有的key都是用双引号引起来
 值的类型：对象{}，数字，字符串，布尔，列表[]
 role:system是AI对应的角色
+     user:是实际的指令
+      assistant:是AI模型的回复/相应
 role：是content(具体指令）
+会话记忆（上下文连接管理）
+Ai没有记忆交互能力
+处理方法：滚雪球处理，每一次加一个上一次的提问，
+eg:针对问题2，"role":"assistant","content":"每个人..."
+             "role":"assistant","content":"增加新的内容"
+ 
+
