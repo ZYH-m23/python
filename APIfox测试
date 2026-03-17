@@ -1,0 +1,5 @@
+json格式
+类似于python中的字典，都是key:value形式，不过所有的key都是用双引号引起来
+值的类型：对象{}，数字，字符串，布尔，列表[]
+role:system是AI对应的角色
+role：是content(具体指令）
