@@ -1,0 +1,28 @@
+是指键值对（key:value)类型的数据，可以根据key找到对应的值
+eg:dict1={"王琳":670,"韩立":565}
+特点：以键值对储存，键不能重复，可以修改
+定义空字典：
+字典命名={}
+字典名字=dict()
+注意：字典中的value可以是任何类型的数据，但是key不能为可变类型（如不能是list,set,dict),
+key不允许重复，若是重复，后面的覆盖前面的，而且字典是没有索引下标的，不能根据索引获取值，只可以根据key获取value
+获取：v=dict1["王琳"]
+
+基本操作
+1.添加/修改数据：
+字典名称[key]=value
+2.删除数据：
+eg:score=dict1.pop(key)
+eg:del dict1[key]
+3.查询数据
+eg:dixt1.get(key)
+4.获取数据
+eg:获取key:dict1.key()
+   获取value:dict1.value()
+   获取值键对：dict1.items()
+
+字典的遍历：
+for k in dict1.keys():
+     print(f"{k}:{dict1{k}}")
+取值键对也可以直接用dict1.item{k}，values()进行遍历
+
