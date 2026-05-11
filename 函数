@@ -1,0 +1,54 @@
+len()   长度函数
+def  函数名（传入参数，形参）：      #避免重复，提高效率
+     函数体
+    return 返回值             #将值递出去
+函数名（参数，实参）          #调用
+
+先定义，在使用
+
+
+函数返回值调用
+def 函数(参数）：
+    函数体
+   return 返回值     #后面的代码都不执行了
+变量=函数（参数）
+print (变量)
+
+返回None值(在if中即false)
+def say_hi():
+    print("你好呀")
+result=say_hi()
+print(f"无返回值，返回内容是{result}")     #结果是none
+print(f"无返回值，返回类型是{type(result)}")    #结果是nonetype
+eg:
+def check_age(age):
+    if age >18:
+        return ("success")
+    else:
+        return None
+
+result=check_age(16)     #指的是进入if表示result是none值，也就是false值
+if not result:
+    print("不可以")
+none也可以去声明无初始变量的内容
+
+函数的嵌套
+即在一个函数里面装了另一个，顺序严格按照代码的顺序进行
+
+局部变量：
+是在函数内部的变量，只能在函数内部生效
+局部变量的作用：在函数内部，临时保存数据，即运行完成后，则销毁局部变量
+eg:
+def test():
+    num=100
+    print(num)
+test()
+print(num)    #这个会报错，因为是局部变量
+
+全局变量：
+在内外都可以进行处理
+eg:全局变量
+num=200
+def a():
+    print(num)
+print(num)
