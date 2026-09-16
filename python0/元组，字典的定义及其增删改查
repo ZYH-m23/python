@@ -1,0 +1,17 @@
+元组，字典的定义及其增删改查
+1.字典形式：dic={‘name’:’Z’,’age’:17}
+          Print(dic)
+2. 查看元素，找变量名：字典不能根据下标进行精准寻找，得用键名，键名如下：
+       Print（dic[‘age’]）= 或用print(dic.get(‘XX’)) 
+3. 修改元素：加上dic[‘age’]=20
+        Print(dic)=
+4.添加元素：与3.形式一样
+5.删除元素：加上del dic（也可具体到一个元素），再运行，若全部清空，用dic.clear(),默认删最后一个，用dic.popitem()
+6.求长度：用print(len(dic))
+ 7.用keys能取出其中的所有键名，
+Print(dic.keys())
+8.将其转化为元组类型：用print(dic.items())
+          
+          
+
+
