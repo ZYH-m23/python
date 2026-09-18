@@ -71,3 +71,7 @@ product = reduce(lambda x, y: x * y, numbers)
 students = [{"name": "Alice", "score": 90}, {"name": "Bob", "score": 85}]
 best = max(students, key=lambda x: x["score"])
 ```
+
+
+reverse=False（默认值）：升序，从小到大排列。
+reverse=True：降序，从大到小排列。
