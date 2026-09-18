@@ -75,3 +75,4 @@ best = max(students, key=lambda x: x["score"])
 
 reverse=False（默认值）：升序，从小到大排列。
 reverse=True：降序，从大到小排列。
+**在原有内容基础上改动不用额外命名列表，如果要是需要额外找要先用整新的列表**
